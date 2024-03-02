@@ -4,6 +4,8 @@
 
 ### 1. Create a file with the following content
 ```bash
+## /home/ubuntu/lab/message.sh
+
 #!/bin/bash
 DATESTRING=$(date +%Y%m%d-%H%M%S)
 CONTENTS="Writing message to file at $DATESTRING"
@@ -86,8 +88,9 @@ HOME=/home/ubuntu
 
 ## DB Backup bash script
 ```bash
+## /home/ubuntu/lab/backup.sh
+
 #!/bin/bash
-# /home/ubuntu/lab/backup.sh
 DATESTRING=$(date +%Y%m%d-%H%M%S)
 DBNAME="mydb"
 DBUSER="localuser"
