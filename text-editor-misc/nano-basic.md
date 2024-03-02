@@ -20,7 +20,7 @@ nano filename.txt
 
 ### Searching and Replacing
 - **Ctrl + W**: Search for text. After pressing, enter the text you want to search for and press Enter.
-- **Ctrl + \ **: Search and replace. Enter the search term, press Enter, then type the replacement text and press Enter.
+- **Ctrl + \\**: Search and replace. Enter the search term, press Enter, then type the replacement text and press Enter.
 
 ### Help
 - **Ctrl + G**: Display the help screen.
