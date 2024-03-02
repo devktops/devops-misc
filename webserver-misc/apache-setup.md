@@ -58,19 +58,19 @@ Then, modify it to match the following setup, adjusting ServerAdmin, ServerName,
 
 7. **Enable the Virtual Host**  
 Enable the new site configuration using `a2ensite`:
-```
+```cmd
 sudo a2ensite domain.com.conf
 ```
 
 8. **Disable the Default Site (Optional)**  
 If you wish, disable the default site to prevent it from interfering:
-```
+```cmd
 sudo a2dissite 000-default.conf
 ```
 
 9. **Reload Apache**  
 Reload Apache to apply the changes:
-```
+```cmd
 sudo systemctl reload apache2
 ```
 
