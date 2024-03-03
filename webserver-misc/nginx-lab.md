@@ -84,4 +84,26 @@ echo "Hello, world!" > /var/www/example.com/index.html
 
 Now you can open your web browser and go to `http://example.com` to see the virtual host in action.
 
+## Basic Authentication
+You can add basic authentication to your virtual host's custom pages by creating a password file and adding the following configuration to the virtual host's configuration file:
+
+```nginx
+server {
+
+    ## ....
+
+    # Basic Authentication to admin directory
+    location /admin {
+        auth_basic "Restricted Area";
+        auth_basic_user_file /etc/nginx/.htpasswd;
+    }
+}
+```
+
+You can create a password file by running the following command:
+
+```bash
+sudo apt install apache2-utils
+sudo htpasswd -c /etc/nginx/.htpasswd username
+```
 
