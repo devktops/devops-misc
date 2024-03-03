@@ -11,6 +11,8 @@ nano filename.txt
 - **Ctrl + E**: Move to the end of the line.
 - **Ctrl + Y**: Scroll up one page.
 - **Ctrl + V**: Scroll down one page.
+- **Ctrl + Home : Go to the beginning of the file. 
+- **Ctrl + END : Go to the end of the file.
 
 ### Editing
 - **Ctrl + K**: Cut the current line and store it in the cutbuffer.
