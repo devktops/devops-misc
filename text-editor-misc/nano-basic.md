@@ -11,8 +11,8 @@ nano filename.txt
 - **Ctrl + E**: Move to the end of the line.
 - **Ctrl + Y**: Scroll up one page.
 - **Ctrl + V**: Scroll down one page.
-- **Ctrl + Home : Go to the beginning of the file. 
-- **Ctrl + END : Go to the end of the file.
+- **Ctrl + Home** : Go to the beginning of the file.
+- **Ctrl + End** : Go the end of the file.
 
 ### Editing
 - **Ctrl + K**: Cut the current line and store it in the cutbuffer.
@@ -23,6 +23,11 @@ nano filename.txt
 ### Searching and Replacing
 - **Ctrl + W**: Search for text. After pressing, enter the text you want to search for and press Enter.
 - **Ctrl + \\**: Search and replace. Enter the search term, press Enter, then type the replacement text and press Enter.
+
+### Deleting
+- **Ctrl + d**: Delete the character of the current position.
+- **Ctrl + Del**: Delete word to the right
+- **Alt + Del**: Delete current line 
 
 ### Help
 - **Ctrl + G**: Display the help screen.
