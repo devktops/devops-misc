@@ -17,6 +17,7 @@ nano filename.txt
 ### Editing
 - **Ctrl + K**: Cut the current line and store it in the cutbuffer.
 - **Ctrl + U**: Paste the cutbuffer contents into the text.
+- **Alt + 6**: Copy the current line. 
 - **Ctrl + O**: Save the file. You'll be prompted to confirm or change the file name.
 - **Ctrl + X**: Exit Nano. If you haven't saved your changes, you'll be prompted to do so.
 
@@ -26,6 +27,7 @@ nano filename.txt
 
 ### Deleting
 - **Ctrl + d**: Delete the character of the current position.
+- **Ctrl + H** : Delete character before cursor.
 - **Ctrl + Del**: Delete word to the right
 - **Alt + Del**: Delete current line 
 
