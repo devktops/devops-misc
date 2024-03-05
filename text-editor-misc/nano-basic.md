@@ -49,3 +49,7 @@ To edit a file named `example.txt`, follow these steps:
 5. To exit Nano, press **Ctrl + X**.
 
 Nano is a straightforward text editor, making it suitable for beginners and those needing to edit text files without the complexity of more advanced text editors.
+
+### VIM CHEAT SHEET
+- https://www.cheatsheet.wtf/Nano/
+- https://www.nano-editor.org/dist/latest/cheatsheet.html
