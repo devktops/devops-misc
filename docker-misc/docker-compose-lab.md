@@ -1,7 +1,11 @@
 # Docker Lab
 
+##### Please use this repository for the lab: [devktops/laravel-todo](https://github.com/devktops/laravel-todo)
+```
+https://github.com/devktops/laravel-todo
+```
 
-### Laravel Project Structure:
+### Laravel Project Structure will be like this after the Docker setup:
 ```
 laravel_project/
 ├── app/
