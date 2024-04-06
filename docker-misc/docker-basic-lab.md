@@ -2,17 +2,108 @@
 
 #### Dockerfile
 ```dockerfile
-FROM nginx:alpine
+# Use Alpine Linux as base image
+FROM alpine:latest
 
-RUN touch /usr/share/nginx/html/index.html && echo "Hello Nginx" > /usr/share/nginx/html/index.html
+# Install nginx
+RUN apk update && \
+    apk add nginx && \
+    rm -rf /var/cache/apk/*
 
+# Copy nginx configuration file
+COPY nginx.conf /etc/nginx/http.d/default.conf
+
+# Create html directory
+RUN mkdir -p /var/www/html
+
+# Copy index.html to /var/www/html
+COPY index.html /var/www/html/
+
+# Change ownership of /var/www/html to user 'nginx'
+RUN chown -R nginx:nginx /var/www/html
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start nginx on container startup
+CMD ["nginx", "-g", "daemon off;"]
+
+```
+
+#### nginx.conf
+```nginx
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+        root /var/www/html;
+
+        index index.html index.html;
+        
+
+        # Everything is a 404
+        location / {
+                try_files $uri $uri/ =404;
+        }
+
+        # You may need this to prevent return 404 recursion.
+        location = /404.html {
+                internal;
+        }
+}
+```
+
+#### index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to DevKTOps</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron mt-5">
+            <h1 class="display-4">Welcome to DevKTOps!</h1>
+            <p class="lead">This is a simple web page served by nginx inside a Docker container.</p>
+            <hr class="my-4">
+            <p>Empowering your DevOps journey.</p>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
 ```
 
 #### Build and run the image
 ```bash
-docker build -t hello-nginx .
-docker run --rm -d -p 8000:80 hello-nginx
-docker run -d -p 8000:80 hello-nginx
+docker build -t hello-kt .
+
+# run the container in the background and map port 8000 on the host to port 80 on the container
+docker run --rm -d -p 8000:80 hello-kt
+docker run -d -p 8000:80 hello-kt
+```
+
+#### Pushing the image to Docker Hub
+```bash
+# Tag the image
+docker tag hello-kt thixpin/hello-kt
+
+# Tag the image with a version
+docker tag hello-kt thixpin/hello-kt:1.0
+
+# Docker login
+docker login
+
+# Push the image to Docker Hub
+docker push thixpin/hello-kt
+docker push thixpin/hello-kt:1.0
 ```
 
 
@@ -74,7 +165,7 @@ docker volume rm my-vol
 docker network rm my-net
 
 # remove the image
-docker rmi hello-nginx
+docker rmi hello-kt
 
 # Prune the Docker system
 # These commands are dangerous and should be used with caution
