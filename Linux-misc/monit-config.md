@@ -34,3 +34,14 @@ set mail-format {
  ```
  set alert yourreceivingemail@gmail.com
  ```
+
+ Set Alert 
+
+ ```
+check system $HOST
+    if loadavg (1min) per core > 2 for 5 cycles then alert
+    if loadavg (5min) per core > 1.5 for 10 cycles then alert
+    if cpu usage > 95% for 10 cycles then alert
+    if memory usage > 75% then alert
+    if swap usage > 25% then alert
+```
