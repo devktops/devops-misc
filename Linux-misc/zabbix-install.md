@@ -70,7 +70,7 @@ sudo apt install zabbix-agent
 - Config zabbix agent
 
 ```bash
-	sudo vim /etc/zabbix/zabbix_agent.conf
+	sudo vim /etc/zabbix/zabbix_agentd.conf
 ```
 
 - Fine the following lines and replace
