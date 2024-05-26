@@ -107,7 +107,23 @@ sudo systemctl status prometheus
 ### Added to Config under scrape_configs
 
 ```
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+           - 'localhost:9093'
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  - "rules.yml"
+  # - "first.yml"
+  # - "second_rules.yml"
+```
+
+```
 - job_name: "Monitor Client"
     scrape_interval: 10s
     static_configs:
       - targets: ["yourclient_Ip":9100"]
+```

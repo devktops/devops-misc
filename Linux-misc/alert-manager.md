@@ -71,3 +71,36 @@ sudo systemctl status alertmanager
 
 Default port : 9093
 
+
+#### Alert Manager Rule (Have to put under prometheus dir)
+```
+groups:
+- name: AllInstances
+  rules:
+  - alert: InstanceDown
+    # Condition for alerting
+    expr: up{instance="client_node:9100"} == 0
+    for: 1m
+    # Annotation - additional informational labels to store more information
+    annotations:
+      title: 'Instance {{ $labels.instance }} down'
+      description: '{{ $labels.instance }} of job {{ $labels.job }} has been down for more than 1 minute.'
+    # Labels - additional labels to be attached to the alert
+    labels:
+      severity: 'critical'
+
+#### Alert Manager Slack Setup 
+
+
+global:
+  resolve_timeout: 1m
+  slack_api_url: your_slack_webhook_url
+
+route:
+  receiver: 'slack-notifications'
+
+receivers:
+- name: 'slack-notifications'
+  slack_configs:
+  - channel: '#alert-manager' 
+    send_resolved: true
