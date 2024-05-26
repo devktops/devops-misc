@@ -46,3 +46,14 @@ ExecStart=/usr/local/bin/node_exporter
 [Install]
 WantedBy=multi-user.target
 ```
+Reload 
+``` 
+sudo systemctl daemon-reload
+ ```
+
+Enable - Start - Status 
+``` 
+sudo systemctl enable node_exporter
+sudo systemctl start node_exporter
+sudo systemctl status node_exporter
+```
