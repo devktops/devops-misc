@@ -20,7 +20,7 @@ Make Directories and give permission
 ```
 sudo mkdir -p /etc/alertmanager/templates
 sudo mkdir /var/lib/alertmanager
-udo chown alertmanager:alertmanager /etc/alertmanager
+sudo chown alertmanager:alertmanager /etc/alertmanager
 sudo chown alertmanager:alertmanager /var/lib/alertmanager
 ```
 Copy to executable file 
