@@ -102,3 +102,12 @@ sudo systemctl enable prometheus
 sudo systemctl start prometheus 
 sudo systemctl status prometheus
 ```
+
+
+### Added to Config under scrape_configs
+
+```
+- job_name: "Monitor Client"
+    scrape_interval: 10s
+    static_configs:
+      - targets: ["yourclient_Ip":9100"]
