@@ -20,6 +20,7 @@ sudo apt install vim
 ## Modes
 - Normal mode
 - Insert mode
+- Replace mode
 - Visual mode
 - Command mode
 
