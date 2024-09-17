@@ -52,6 +52,13 @@ To edit a file named `example.txt`, follow these steps:
 
 Nano is a straightforward text editor, making it suitable for beginners and those needing to edit text files without the complexity of more advanced text editors.
 
+### Delete Multiple Lines 
+
+1. Go toe the first line that you want to delete
+2. Mark the starting point by pressing ``CTRL + ^`` (press CTRL and Shift + 6 at the same time). This will set the starting point for your selection.
+3. Use the arrow keys to move the cursor down to the last line you want to delete. The text will be highlighted as you move.
+4. Press ``CTRL + K`` to cut (delete) the selected block of lines.
+   
 ### Nano CHEAT SHEET
 - https://www.cheatsheet.wtf/Nano/
 - https://www.nano-editor.org/dist/latest/cheatsheet.html
