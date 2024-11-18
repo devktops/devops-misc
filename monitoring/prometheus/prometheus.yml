@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 5s  # Set the interval to scrape targets
+
+scrape_configs:
+  - job_name: 'python_app'
+    static_configs:
+      - targets: ['your-public-ip:8000/metrics']  # Adjust to match the Python app’s /metrics endpoint
