@@ -5,6 +5,14 @@ To open a file with Nano, use the following command:
 ```cmd
 nano filename.txt
 ```
+To open a file with nano and show numbers: 
+```cmd
+nano -l filename.txt
+```
+To open a file with nano and go to the line directly: 
+```cmd
+nano +10 filename.txt
+```
 
 ### Basic Navigation
 - **Ctrl + A**: Move to the beginning of the line.
@@ -24,6 +32,7 @@ nano filename.txt
 ### Searching and Replacing
 - **Ctrl + W**: Search for text. After pressing, enter the text you want to search for and press Enter.
 - **Ctrl + \\**: Search and replace. Enter the search term, press Enter, then type the replacement text and press Enter.
+- **Ctrl + _ (Shift+-)** Search the line number and go.
 
 ### Deleting
 - **Ctrl + d**: Delete the character of the current position.
