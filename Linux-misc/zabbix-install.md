@@ -19,7 +19,7 @@ sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabb
 
 ```bash
 sudo apt install mariadb-server 
-mysql -u root -p -> enter 
+sudo mysql -u root -p -> enter 
 mysql> create database zabbix character set utf8mb4 collate utf8mb4_bin;
 mysql> create user zabbix@localhost identified by 'password';
 mysql> grant all privileges on zabbix.* to zabbix@localhost;
