@@ -51,7 +51,7 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 
 ```bash
 http://your_ip/zabbix 
-Login with default password " admin:zabbix" 
+Login with default password "Admin:zabbix" 
 ```
 
 Ref : https://www.zabbix.com/download?zabbix=6.4&os_distribution=ubuntu&os_version=24.04&components=server_frontend_agent&db=mysql&ws=apache
@@ -70,7 +70,7 @@ sudo apt install zabbix-agent
 - Config zabbix agent
 
 ```bash
-	sudo vim /etc/zabbix/zabbix_agentd.conf
+sudo vim /etc/zabbix/zabbix_agentd.conf
 ```
 
 - Fine the following lines and replace
