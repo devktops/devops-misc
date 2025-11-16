@@ -9,8 +9,9 @@
 `docker run --network lab-network -p 8000:8000 -d lab-app`
 
 ### Setup Prometheus Script 
-```global:
-scrape_interval: 5s  # Set the interval to scrape targets
+```
+global:
+  scrape_interval: 5s  # Set the interval to scrape targets
 
 scrape_configs:
   - job_name: 'python_app'
