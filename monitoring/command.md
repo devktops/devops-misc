@@ -3,7 +3,7 @@
 `docker network create lab-network`
 
 ### Build Applicatin Container 
-`docker build -t lab-app` 
+`docker build -t lab-app .` 
 
 ### Run Docker Container 
 `docker run --network lab-network -p 8000:8000 -d lab-app`
